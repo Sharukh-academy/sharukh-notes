@@ -1,0 +1,711 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>☁️ AWS, Azure &amp; GCP Integration with Snowflake – Sharukh Academy</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3270b328-364d-8095-a2e6-c1f83f3276e8" class="page sans"><header><h1 class="page-title" dir="auto">☁️ AWS, Azure &amp; GCP Integration with Snowflake – Sharukh Academy</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="3270b328-364d-8093-845a-fab8c80767ce" class="">🌐 Website: <a href="https://www.sharukhacademy.com/">https://www.sharukhacademy.com/</a></p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-8010-853b-e0f38301c7e6" class="">📸 Instagram: <a href="https://www.instagram.com/sharuk_academy/">https://www.instagram.com/sharuk_academy/</a></p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-803c-9e5f-fe6ebc7d0a71" class="">🎥 YouTube: <a href="https://www.youtube.com/@SharukhAcademy">https://www.youtube.com/@SharukhAcademy</a></p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-80b0-9952-e67a8b9c8fdf" class="">📝 Register: <a href="https://forms.gle/Ytb8Kqwyjc14HBZq6">https://forms.gle/Ytb8Kqwyjc14HBZq6</a></p></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-80d5-a8a2-d65c2473cb66"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-8049-b5c0-fc6037efc421" class="">🧊 Overview</h2></div><div style="display:contents" dir="auto"><p id="3270b328-364d-8088-9683-c74b743fd9bf" class="">Snowflake integrates with major cloud platforms to <strong>load data from external storage</strong>.</p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-80f9-89c7-d44cf330a6fa" class="">👉 Supported platforms:</p></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8034-bc7b-d5564f02e5d4" class="bulleted-list"><li style="list-style-type:disc">AWS (S3)</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80a5-bc69-dca2e2ce586f" class="bulleted-list"><li style="list-style-type:disc">Azure (Blob Storage)</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80fc-b427-ed970fcc2871" class="bulleted-list"><li style="list-style-type:disc">GCP (Google Cloud Storage)</li></ul></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-80d6-a87f-de80f205444e"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-80da-bece-f60001ceb8e9" class="">🎯 Why Cloud Integration is Important</h2></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80bb-a0fa-dfc1a619693b" class="bulleted-list"><li style="list-style-type:disc">📦 Data is stored in cloud storage</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-806a-801c-cabb28e9c36d" class="bulleted-list"><li style="list-style-type:disc">🔄 Enables seamless data pipelines</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8051-9d9a-ea450b16589b" class="bulleted-list"><li style="list-style-type:disc">⚡ Required for real-time &amp; large-scale data processing</li></ul></div><div style="display:contents" dir="auto"><p id="3270b328-364d-806f-ab9d-ead8beeff6a1" class="">👉 This is a <strong>real-world data engineering concept</strong></p></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-8033-b782-c8b19b24c7fa"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-8041-b2b5-fe64d10c1a3e" class="">☁️ Steps to Load Data from AWS (S3)</h2></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-8074-84d3-ca2c48f4ced8" class="">1️⃣ Create Storage Integration</h3></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8015-ac23-ecac201e4d72" class="bulleted-list"><li style="list-style-type:disc">Secure connection between Snowflake and AWS</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80b8-b203-d5e73109cf12" class="bulleted-list"><li style="list-style-type:disc">Handles authentication</li></ul></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-809a-9b7b-f83bcd6dc26e"/></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-80bf-bd61-c1302c00ab82" class="">2️⃣ Create External Stage</h3></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80a7-8644-c07fdcfe2e64" class="bulleted-list"><li style="list-style-type:disc">Points to S3 bucket location</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8093-b298-d7a13ebfdc18" class="bulleted-list"><li style="list-style-type:disc">Stores file path + access details</li></ul></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-8084-9647-c514f9ce93c9"/></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-802e-901d-d5805ee61b0f" class="">3️⃣ Load Data Using COPY Command</h3></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3270b328-364d-80fb-91e8-fdaf21845c9f" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">COPYINTO table_name
+FROM @external_stage;</code></pre></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-809b-9157-d4c5cdfb2d2c"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-8093-91f6-e99350d7795c" class="">🔷 Steps to Load Data from Azure</h2></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-8061-b905-e421fdb8409b" class="">1️⃣ Create Storage Integration</h3></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-8028-934b-f47700e788e7" class="">2️⃣ Create External Stage</h3></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-8097-b956-d0e813d35de3" class="">3️⃣ Use COPY Command</h3></div><div style="display:contents" dir="auto"><p id="3270b328-364d-805c-8dc0-fe9c513e3bce" class="">👉 Same process as AWS, only storage changes</p></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-807f-be6b-c1833f6a7e07"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-8088-b32b-e7f205fc9304" class="">🟡 Steps to Load Data from GCP</h2></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-801d-87d2-d99d8ea43628" class="">1️⃣ Create Storage Integration</h3></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-808d-bc1f-dd44dc24815d" class="">2️⃣ Create External Stage</h3></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-80dc-863b-d9f791948fc6" class="">3️⃣ Use COPY Command</h3></div><div style="display:contents" dir="auto"><p id="3270b328-364d-80b8-9e20-e744815bb6d5" class="">👉 Same concept across all cloud platforms</p></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-805f-8e68-eda964276265"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-8019-b9d9-c2e0243ad9ba" class="">⚙️ Key Components</h2></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-8017-9d45-eee8713b738d" class="">🔐 Storage Integration</h3></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8055-b802-db4861e0e27a" class="bulleted-list"><li style="list-style-type:disc">Secure authentication mechanism</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8079-b999-c9be4313b5af" class="bulleted-list"><li style="list-style-type:disc">Avoids exposing credentials</li></ul></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-80ac-8a0a-f6301f09e687"/></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-8038-9df3-f9d52fbf6420" class="">📂 External Stage</h3></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-804b-8472-fd701762024b" class="bulleted-list"><li style="list-style-type:disc">Points to cloud storage location</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8038-9701-e83f64da7ad1" class="bulleted-list"><li style="list-style-type:disc">Stores file path + configuration</li></ul></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-80d1-be84-ce06140abcc3"/></div><div style="display:contents" dir="auto"><h3 id="3270b328-364d-8046-be2c-fab928e32219" class="">🛠️ COPY Command</h3></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80bb-b2f1-fd1140aaff48" class="bulleted-list"><li style="list-style-type:disc">Loads data into Snowflake tables</li></ul></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-80b4-8857-dfb119119708"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-8070-bc8b-ec81bcb04349" class="">🧠 Unified Flow (Very Important)</h2></div><div style="display:contents" dir="auto"><p id="3270b328-364d-809e-9cb7-de10b7494ea4" class="">👉 Cloud Storage → Stage → COPY → Snowflake Table</p></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-8088-af42-e0e9a38a3f67"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-804f-bac9-d07a41388965" class="">🎯 Best Practices</h2></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8050-8bbc-e1df5fe67236" class="bulleted-list"><li style="list-style-type:disc">Use <strong>Storage Integration</strong> (secure approach)</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80b7-819d-fcd2ba2007c5" class="bulleted-list"><li style="list-style-type:disc">Organize files properly in cloud</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-809c-9dbf-e646afb6641e" class="bulleted-list"><li style="list-style-type:disc">Use correct <strong>file formats</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-807a-953b-e18b4939c74a" class="bulleted-list"><li style="list-style-type:disc">Monitor load performance</li></ul></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-8000-9787-fe890b637d80"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-801d-bcfb-dbaf5e902a73" class="">⚠️ Common Mistakes</h2></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80cc-9ca7-dc9a1ffe6390" class="bulleted-list"><li style="list-style-type:disc">Hardcoding credentials (security risk)</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8024-9779-d32e6ff3b4af" class="bulleted-list"><li style="list-style-type:disc">Wrong stage configuration</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8044-99ed-e80b687c3c14" class="bulleted-list"><li style="list-style-type:disc">Incorrect file format</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8011-b7ab-c2b483f116fa" class="bulleted-list"><li style="list-style-type:disc">Ignoring permissions</li></ul></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-8061-b07e-c24ced0131ad"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-80c5-9c0f-f15a7eaf51b5" class="">🧠 Interview Angle</h2></div><div style="display:contents" dir="auto"><p id="3270b328-364d-80ea-bb0c-f5143c757b69" class="">Common questions:</p></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80f2-8a50-c9f9a0e81c8f" class="bulleted-list"><li style="list-style-type:disc">How Snowflake integrates with AWS?</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-802b-841e-d6e9a3ed5492" class="bulleted-list"><li style="list-style-type:disc">What is Storage Integration?</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-8061-9ae9-febe5bdf5d62" class="bulleted-list"><li style="list-style-type:disc">Steps to load data from S3?</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80ed-9f0d-e1e489b359b8" class="bulleted-list"><li style="list-style-type:disc">Difference between internal vs external stage?</li></ul></div><div style="display:contents" dir="auto"><p id="3270b328-364d-8009-8be2-f0c0ee3720a2" class="">👉 Very important for <strong>real-time projects</strong></p></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-80fb-a2d0-c72ab3b680d9"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-803b-8b97-f5ccf4e8d6c8" class="">🧠 Easy Way to Remember</h2></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80e3-84e4-e80ea510dfcf" class="bulleted-list"><li style="list-style-type:disc">☁️ Cloud → Storage</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-806e-8548-df76d897e621" class="bulleted-list"><li style="list-style-type:disc">📂 Stage → Connection</li></ul></div><div style="display:contents" dir="auto"><ul id="3270b328-364d-80a8-acf6-f9b33347ab4e" class="bulleted-list"><li style="list-style-type:disc">🛠️ COPY → Load</li></ul></div><div style="display:contents" dir="auto"><p id="3270b328-364d-802e-a892-cc9efb41a3b8" class="">👉 Simple pipeline flow</p></div><div style="display:contents" dir="auto"><hr id="3270b328-364d-801c-885b-c4360ec36e43"/></div><div style="display:contents" dir="auto"><h2 id="3270b328-364d-80b1-9702-c08c144690bd" class="">🚀 Start Your Journey</h2></div><div style="display:contents" dir="auto"><p id="3270b328-364d-8021-ab3c-f4fc074caaf8" class="">👉 Register for Training:</p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-808e-91d5-e0a69a33b253" class=""><a href="https://forms.gle/Ytb8Kqwyjc14HBZq6">https://forms.gle/Ytb8Kqwyjc14HBZq6</a></p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-8049-8317-fe6dd2b6caf7" class="">👉 Follow for Updates:</p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-80a9-9d0f-dec49ec8ccff" class=""><a href="https://www.instagram.com/sharuk_academy/">https://www.instagram.com/sharuk_academy/</a></p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-80ff-9480-cf8ef09f67a6" class="">👉 Watch Tutorials:</p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-8081-96b3-faea117769a7" class=""><a href="https://www.youtube.com/@SharukhAcademy">https://www.youtube.com/@SharukhAcademy</a></p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-80ed-8329-c441cfc7505f" class="">👉 Explore More:</p></div><div style="display:contents" dir="auto"><p id="3270b328-364d-80a4-b47b-d6776e42a6de" class=""><a href="https://www.sharukhacademy.com/">https://www.sharukhacademy.com/</a></p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

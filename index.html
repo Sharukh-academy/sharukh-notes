@@ -1,0 +1,712 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>🚀 Sharukh Academy – Snowflake Job-Oriented Training</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3260b328-364d-80a8-ae2b-f038c19ad159" class="page sans"><header><img class="page-cover-image" src="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/yt_banner_4.jpg.jpeg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/sharukacademy.png"/></div><h1 class="page-title" dir="auto">🚀 Sharukh Academy – Snowflake Job-Oriented Training</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="3260b328-364d-8064-afe4-f20b2fbe0210" class="">🌐 Website: <a href="http://SharukhAcademy.com">SharukhAcademy.com</a></p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80dd-bf3c-d3d3da32155c" class="">🔗 Instagram: <a href="https://www.instagram.com/sharuk_academy/">https://www.instagram.com/sharuk_academy/</a></p></div><div style="display:contents" dir="auto"><p id="9f5fac0f-06f2-464e-8390-ba3a03f7e78e" class="">▶️ YouTube: <a href="https://www.youtube.com/@SharukhAcademy">https://www.youtube.com/@SharukhAcademy</a></p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-8092-8343-d47191f0ee8b" class="">📝 Registration Form: <a href="https://forms.gle/Ytb8Kqwyjc14HBZq6">https://forms.gle/Ytb8Kqwyjc14HBZq6</a></p></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8018-96a3-c5e479d685b2"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-8062-adcb-f9462a5ec892" class="">🎯 About the Program</h2></div><div style="display:contents" dir="auto"><p id="3260b328-364d-8045-8057-d3526e203dd1" class="">A <strong>job-oriented Snowflake training program</strong> designed to help students move from <strong>basic SQL knowledge → Data Engineering roles</strong>.</p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-8022-b74d-ca4c120a36fb" class="">Focus areas:</p></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-800d-8d50-dc6b4fe2c25f" class="bulleted-list"><li style="list-style-type:disc">Real-time industry concepts</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80da-a6ee-e849be9a28c2" class="bulleted-list"><li style="list-style-type:disc">Hands-on SQL + Snowflake practice</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-809b-8d93-ebac6deb9170" class="bulleted-list"><li style="list-style-type:disc">Interview preparation + resume support</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8086-b280-f19cfe06d3c5"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-80b1-aa06-de5b5921d2e8" class="">❄️ Why Snowflake?</h2></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-800c-92b7-f8c886ebb9ba" class="bulleted-list"><li style="list-style-type:disc">☁️ Cloud-based Data Warehouse</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8011-bd74-febfbbb1e444" class="bulleted-list"><li style="list-style-type:disc">💰 Pay-as-you-use pricing model</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-806d-834f-e52b80409239" class="bulleted-list"><li style="list-style-type:disc">📦 Flexible storage &amp; compute</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80c9-b4c3-c9c13aa59a68" class="bulleted-list"><li style="list-style-type:disc">🧠 Supports ANSI SQL</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-804a-acd0-e09e75bb5265" class="bulleted-list"><li style="list-style-type:disc">🔗 Easy integration with ETL &amp; BI tools</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8048-a60e-efd8bf9fcb87" class="bulleted-list"><li style="list-style-type:disc">📊 Strong analytics capabilities</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80ec-87d8-f9b1cabdf1c3"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-8057-ad87-cce953ae6167" class="">💼 Job Market Insights</h2></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-806e-b7f8-daf02eb0f053" class="bulleted-list"><li style="list-style-type:disc">Companies are shifting to <strong>cloud data platforms</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8088-a7e4-ca1d1194ebc3" class="bulleted-list"><li style="list-style-type:disc">High demand for Snowflake developers</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80a1-9a4b-ce9fc89712f9" class="bulleted-list"><li style="list-style-type:disc">Opportunities in:<div style="display:contents" dir="auto"><ul id="3260b328-364d-8082-81ba-ec010a0c358f" class="bulleted-list"><li style="list-style-type:circle">TCS</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80ef-a61c-c34a602f0dec" class="bulleted-list"><li style="list-style-type:circle">Infosys</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-804f-9c81-d5349ac546ca" class="bulleted-list"><li style="list-style-type:circle">Wipro</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8006-8ff3-f0564b953411" class="bulleted-list"><li style="list-style-type:circle">Accenture</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-801c-8ad3-c0b9237aa5eb" class="bulleted-list"><li style="list-style-type:circle">Cognizant</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-805f-907e-d6ef5fad7ec4" class="bulleted-list"><li style="list-style-type:disc">With proper preparation:<div style="display:contents" dir="auto"><p id="3260b328-364d-8006-ae41-d8e5d1f5b476" class="">👉 You can expect multiple interviews per week</p></div></li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-803a-b399-d9f520a9f3f3"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-80cf-8a1d-e57eaa1be548" class="">📚 Prerequisites</h2></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8029-952f-d0cf39f7b394" class="bulleted-list"><li style="list-style-type:disc">Basic Database Knowledge</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-805d-b314-e0973de400d5" class="bulleted-list"><li style="list-style-type:disc">Basic SQL Knowledge</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-805b-ad52-d6568acedc40"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-80b5-bfe3-c6b81950ef09" class="">📅 Course Curriculum</h2></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-805f-8dc5-efe85931c6d2" class="">🧩 Core Topics</h3></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-808f-916b-e2d85a199773" class="numbered-list" start="1"><li><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%E2%9D%84%EF%B8%8F%20Why%20Snowflake%203260b328364d80e19a7bd7130da1e2f2.html">❄️ Why Snowflake?</a> </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-80a4-b83e-c9cc28223d26" class="numbered-list" start="2"><li><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%8F%97%EF%B8%8F%20Snowflake%20Architecture%20%E2%80%93%20Sharukh%20Academy%203260b328364d801480a4fe8fe0da6845.html">🏗️ Snowflake Architecture – Sharukh Academy</a> </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-800a-b864-dc5984ed58c6" class="numbered-list" start="3"><li><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%A7%AA%20Snowflake%20Trial%20Account%20+%20UI%20%E2%80%93%20Sharukh%20Academy%203260b328364d80cab981f613b135e1f2.html">🧪 Snowflake Trial Account + UI – Sharukh Academy</a> </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-804c-9a8f-e374aabaaf67" class="numbered-list" start="4"><li><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%8F%AD%20Virtual%20Warehouses%20%E2%80%93%20Sharukh%20Academy%203260b328364d809e8083fa8831d340fd.html">🏭 Virtual Warehouses – Sharukh Academy</a> </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-806b-9b9d-d65929a088cb" class="numbered-list" start="5"><li><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%A7%A9%20Micro-Partitions%20&amp;%20Clustering%20%E2%80%93%20Sharukh%20Academy%203260b328364d80978fedc8c6241262f7.html">🧩 Micro-Partitions &amp; Clustering – Sharukh Academy</a> </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8065-b914-fa1418122040" class="numbered-list" start="6"><li> <a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%93%A5%20Data%20Loading%20in%20Snowflake%20%E2%80%93%20Sharukh%20Academy%203270b328364d8061ac04f405ad70ed1b.html">📥 Data Loading in Snowflake – Sharukh Academy</a> </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8066-a5de-ddd3c3567323" class="numbered-list" start="7"><li><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%93%82%20Stages%20in%20Snowflake%20%E2%80%93%20Sharukh%20Academy%203270b328364d80649dd6d76ba9b0ffac.html">📂 Stages in Snowflake – Sharukh Academy</a> &amp;  <a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%93%8A%20External%20Tables%20in%20Snowflake%20%E2%80%93%20Sharukh%20Academy%203270b328364d8088a428c530408e67bd.html">📊 External Tables in Snowflake – Sharukh Academy</a> </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-80d3-911f-d3f06fea24aa" class="numbered-list" start="8"><li><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%E2%98%81%EF%B8%8F%20AWS,%20Azure%20&amp;%20GCP%20Integration%20with%20Snowflake%20%E2%80%93%20S%203270b328364d8095a2e6c1f83f3276e8.html">☁️ AWS, Azure &amp; GCP Integration with Snowflake – Sharukh Academy</a> </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-80a5-9ab9-d93c11ca0a63" class="numbered-list" start="9"><li> <a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%A7%AA%20Lab%20Loading%20Data%20from%20AWS%20S3%20to%20Snowflake%20%E2%80%93%20Shar%203270b328364d80bcb0dbf68d575e665b.html">🧪 Lab: Loading Data from AWS S3 to Snowflake – Sharukh Academy</a> </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8036-8e47-ffb756739fd5" class="numbered-list" start="10"><li>Pricing &amp; Editions</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-802c-8b05-c499cdb34103" class="numbered-list" start="11"><li>Semi-structured Data</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8098-8793-c9c199a3ea05" class="numbered-list" start="12"><li>Snowpipe</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8009-b721-f2ae018ac29c" class="numbered-list" start="13"><li>Caching</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8071-ad64-ff33e9e3f43c" class="numbered-list" start="14"><li>Time Travel &amp; Fail-safe</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8034-b926-c0386217461c" class="numbered-list" start="15"><li>Cloning &amp; Table Types</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-80a1-993a-f5bec8f552fc" class="numbered-list" start="16"><li>RBAC (Role-Based Access Control)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-80ab-9888-f7ceccf0991b" class="numbered-list" start="17"><li>Views</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8049-ab2c-eb3639c1782d" class="numbered-list" start="18"><li>Data Masking</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-807f-9c2b-dd3e7302e5a0" class="numbered-list" start="19"><li>Data Sharing</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8073-a10e-e9898fdb0f7f" class="numbered-list" start="20"><li>Tasks &amp; Scheduling</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-8074-8786-f2dd2ad22d3b" class="numbered-list" start="21"><li>Streams (CDC)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-802b-9f0e-d237d7ed655c" class="numbered-list" start="22"><li>Tasks with Streams</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-80d7-87d6-c51c6800459a" class="numbered-list" start="23"><li>External Tables</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3260b328-364d-80dc-aca8-d9b3e05dc488" class="numbered-list" start="24"><li>Stored Procedures &amp; UDFs</li></ol></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-807c-8daf-e084258cd288"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-80b6-93f4-cf16e1801765" class="">🚀 Bonus Modules</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-801d-af26-faaab866afae" class="bulleted-list"><li style="list-style-type:disc">Real-time Project Flow</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8073-a6bb-c50aadbef02f" class="bulleted-list"><li style="list-style-type:disc">Interview Questions &amp; Tips</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-807f-a6ff-c79d831a0bd4" class="bulleted-list"><li style="list-style-type:disc">Resume Preparation</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80b2-a1ca-ff4477711a32"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-80af-ad8c-c8a25cb2d7fb" class="">⏱️ Course Duration</h2></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8073-9f68-c3ed8dde022e" class="bulleted-list"><li style="list-style-type:disc">📆 25 Core Sessions</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8035-ac51-cbe36c752aa8" class="bulleted-list"><li style="list-style-type:disc">⏰ 60–90 mins each</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-801b-8252-ffd752f749e1" class="bulleted-list"><li style="list-style-type:disc">➕ 3 Extra Sessions</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8036-80b5-d57e0788203b" class="bulleted-list"><li style="list-style-type:disc">📊 Total: ~30 Sessions (35 Days)</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8064-b006-e1dcb4d2190a"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-804c-a72d-de5a35fcf7a7" class="">💡 Why Sharukh Academy?</h2></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-809c-a12a-cbeef964a646" class="bulleted-list"><li style="list-style-type:disc">🎯 100% Job-Oriented Training</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80d9-b9e6-d5407e03e6b6" class="bulleted-list"><li style="list-style-type:disc">🧪 Real-time Use Cases</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8055-ac9c-c85cf3d45e54" class="bulleted-list"><li style="list-style-type:disc">🎤 Interview Preparation Focus</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80c7-981d-c0a600f7865e"/></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-802c-9e7b-cba052da3710"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-805c-89c5-f5282c99141c" class="">📌 Final Success Formula</h2></div><div style="display:contents" dir="auto"><blockquote id="3260b328-364d-80c4-8524-f6c091fd2596" class="">AttendReadPracticePrepare<br/><br/>👉 <strong>Get the Job</strong></blockquote></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80de-bbec-e16b556fbfd1"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-805b-8451-d851b625943c" class="">🔗 Quick Actions</h2></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80cb-a7c0-c0a66050e793" class="">👉 Join Demo / Register:</p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-803e-a6f5-c1f50e90706c" class=""><a href="https://forms.gle/Ytb8Kqwyjc14HBZq6">https://forms.gle/Ytb8Kqwyjc14HBZq6</a></p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80cc-8bd9-dff62010bc28" class="">👉 Follow for Updates:</p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-8047-ab44-dfa914d258df" class=""><a href="https://www.instagram.com/sharuk_academy/">https://www.instagram.com/sharuk_academy/</a></p></div><div style="display:contents" dir="auto"><p id="b61b4430-2a5d-4150-ada6-93acfe23e521" class="">▶️ Subscribe on YouTube:</p></div><div style="display:contents" dir="auto"><p id="359404e9-daf2-4705-9f85-386c76d03a69" class=""><a href="https://www.youtube.com/@SharukhAcademy">https://www.youtube.com/@SharukhAcademy</a></p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-808e-bc79-f4392fe22fa2" class="">👉 Explore Website:</p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-8077-8c4c-eab740ecc857" class=""><a href="https://www.sharukhacademy.com/">https://www.sharukhacademy.com/</a></p></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80e8-8a44-fb8a677e3ee3"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-80e2-8afa-eb9a0fd8d740" class="">🧠 Positioning (Important for You)</h2></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80fb-8cd5-f1790e3c19cb" class="">This page clearly communicates:</p></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8071-9c71-f477d3443879" class="bulleted-list"><li style="list-style-type:disc">Who it is for → Students / Beginners</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-808d-aecc-ec28a1149b5c" class="bulleted-list"><li style="list-style-type:disc">What they get → Job-ready skills</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8091-8566-c78a271591da" class="bulleted-list"><li style="list-style-type:disc">Outcome → Data Engineering roles</li></ul></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80dd-a02b-eea3c68bd5d4" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="3260b328-364d-80e1-9a7b-d7130da1e2f2" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%E2%9D%84%EF%B8%8F%20Why%20Snowflake%203260b328364d80e19a7bd7130da1e2f2.html">❄️ Why Snowflake?</a></figure></div><div style="display:contents" dir="ltr"><figure id="3260b328-364d-8014-80a4-fe8fe0da6845" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%8F%97%EF%B8%8F%20Snowflake%20Architecture%20%E2%80%93%20Sharukh%20Academy%203260b328364d801480a4fe8fe0da6845.html">🏗️ Snowflake Architecture – Sharukh Academy</a></figure></div><div style="display:contents" dir="ltr"><figure id="3260b328-364d-80ca-b981-f613b135e1f2" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%A7%AA%20Snowflake%20Trial%20Account%20+%20UI%20%E2%80%93%20Sharukh%20Academy%203260b328364d80cab981f613b135e1f2.html">🧪 Snowflake Trial Account + UI – Sharukh Academy</a></figure></div><div style="display:contents" dir="ltr"><figure id="3260b328-364d-809e-8083-fa8831d340fd" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%8F%AD%20Virtual%20Warehouses%20%E2%80%93%20Sharukh%20Academy%203260b328364d809e8083fa8831d340fd.html">🏭 Virtual Warehouses – Sharukh Academy</a></figure></div><div style="display:contents" dir="ltr"><figure id="3260b328-364d-8097-8fed-c8c6241262f7" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%A7%A9%20Micro-Partitions%20&amp;%20Clustering%20%E2%80%93%20Sharukh%20Academy%203260b328364d80978fedc8c6241262f7.html">🧩 Micro-Partitions &amp; Clustering – Sharukh Academy</a></figure></div><div style="display:contents" dir="ltr"><figure id="3270b328-364d-8061-ac04-f405ad70ed1b" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%93%A5%20Data%20Loading%20in%20Snowflake%20%E2%80%93%20Sharukh%20Academy%203270b328364d8061ac04f405ad70ed1b.html">📥 Data Loading in Snowflake – Sharukh Academy</a></figure></div><div style="display:contents" dir="ltr"><figure id="3270b328-364d-8064-9dd6-d76ba9b0ffac" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%93%82%20Stages%20in%20Snowflake%20%E2%80%93%20Sharukh%20Academy%203270b328364d80649dd6d76ba9b0ffac.html">📂 Stages in Snowflake – Sharukh Academy</a></figure></div><div style="display:contents" dir="ltr"><figure id="3270b328-364d-8088-a428-c530408e67bd" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%93%8A%20External%20Tables%20in%20Snowflake%20%E2%80%93%20Sharukh%20Academy%203270b328364d8088a428c530408e67bd.html">📊 External Tables in Snowflake – Sharukh Academy</a></figure></div><div style="display:contents" dir="ltr"><figure id="3270b328-364d-8095-a2e6-c1f83f3276e8" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%E2%98%81%EF%B8%8F%20AWS,%20Azure%20&amp;%20GCP%20Integration%20with%20Snowflake%20%E2%80%93%20S%203270b328364d8095a2e6c1f83f3276e8.html">☁️ AWS, Azure &amp; GCP Integration with Snowflake – Sharukh Academy</a></figure></div><div style="display:contents" dir="ltr"><figure id="3270b328-364d-80bc-b0db-f68d575e665b" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%A7%AA%20Lab%20Loading%20Data%20from%20AWS%20S3%20to%20Snowflake%20%E2%80%93%20Shar%203270b328364d80bcb0dbf68d575e665b.html">🧪 Lab: Loading Data from AWS S3 to Snowflake – Sharukh Academy</a></figure></div><div style="display:contents" dir="auto"><p id="3290b328-364d-80de-b2a0-d433a612ba45" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="3290b328-364d-80d1-8253-ec76ec203859" class="link-to-page"><a href="%F0%9F%9A%80%20Sharukh%20Academy%20%E2%80%93%20Snowflake%20Job-Oriented%20Trainin/%F0%9F%A7%B1%20DBT%20Models%20&amp;%20Seeds%20%E2%80%93%20Sharukh%20Academy%203290b328364d80d18253ec76ec203859.html">🧱 DBT Models &amp; Seeds – Sharukh Academy</a></figure></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

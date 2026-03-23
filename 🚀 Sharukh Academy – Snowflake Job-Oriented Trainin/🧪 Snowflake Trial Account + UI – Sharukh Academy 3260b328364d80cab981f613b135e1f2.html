@@ -1,0 +1,710 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>🧪 Snowflake Trial Account + UI – Sharukh Academy</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3260b328-364d-80ca-b981-f613b135e1f2" class="page sans"><header><h1 class="page-title" dir="auto">🧪 Snowflake Trial Account + UI – Sharukh Academy</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="3260b328-364d-8017-ad18-d3bd4ab56acc" class="">🌐 Website: <a href="https://www.sharukhacademy.com/">https://www.sharukhacademy.com/</a></p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80b1-8813-e065f886bab8" class="">📸 Instagram: <a href="https://www.instagram.com/sharuk_academy/">https://www.instagram.com/sharuk_academy/</a></p></div><div style="display:contents" dir="auto"><p id="d6a4b199-7f64-48b2-ad74-45aac021b2de" class="">▶️ YouTube: <a href="https://www.youtube.com/@SharukhAcademy">https://www.youtube.com/@SharukhAcademy</a></p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-809f-9d34-d65027a38c96" class="">📝 Register: <a href="https://forms.gle/Ytb8Kqwyjc14HBZq6">https://forms.gle/Ytb8Kqwyjc14HBZq6</a></p></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-803f-a246-e841013468a3"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-8030-92fc-e2e804f3cc83" class="">🧊 What is Snowflake Trial Account?</h2></div><div style="display:contents" dir="auto"><p id="3260b328-364d-803e-906f-de3159cefe4d" class="">Snowflake provides a <strong>free trial account</strong> to help users:</p></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80ad-be92-cfb29114c677" class="bulleted-list"><li style="list-style-type:disc">Practice Snowflake features</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-806a-989a-c81da35d0352" class="bulleted-list"><li style="list-style-type:disc">Run SQL queries</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8009-bf74-c2ec8187a80a" class="bulleted-list"><li style="list-style-type:disc">Explore real-time data scenarios</li></ul></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-8019-a051-d7afe6f46a5c" class="">Key Highlights:</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8029-a254-ed9f099e1de4" class="bulleted-list"><li style="list-style-type:disc">💰 Free credits provided (limited usage)</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80ec-89ad-f8fd72235be8" class="bulleted-list"><li style="list-style-type:disc">☁️ Runs on cloud (AWS / Azure / GCP)</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80a5-a083-d28a73ad47ed" class="bulleted-list"><li style="list-style-type:disc">⚡ No installation required</li></ul></div><div style="display:contents" dir="auto"><p id="3260b328-364d-8048-b955-c6cd6fd32e1c" class="">👉 Best way to start learning Snowflake practically</p></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80ca-bba0-db9cccc14ca0"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-80db-8e65-e37bd82d8b53" class="">🚀 Steps to Create Snowflake Trial Account</h2></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-80b0-8c87-d14d907cc485" class="">1️⃣ Visit Snowflake Website</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8087-9539-de382fd5149b" class="bulleted-list"><li style="list-style-type:disc">Go to: <a href="https://www.snowflake.com/">https://www.snowflake.com/</a></li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80b9-a156-efbbad391b3b" class="bulleted-list"><li style="list-style-type:disc">Click on <strong>Start Free Trial</strong></li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80f1-8d03-e6c0e14c403b"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-80ca-a088-e97ed855aa8a" class="">2️⃣ Enter Basic Details</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8044-9575-d32271bb31ad" class="bulleted-list"><li style="list-style-type:disc">Email ID</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-803d-bd24-dcc5c50b153b" class="bulleted-list"><li style="list-style-type:disc">Name</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-806c-a979-c091a97ab929" class="bulleted-list"><li style="list-style-type:disc">Organization (optional)</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80a5-af21-df63426b26b9"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-80d8-a9fd-c47f6b847226" class="">3️⃣ Choose Cloud Provider &amp; Region</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80ac-815d-d720530a372f" class="bulleted-list"><li style="list-style-type:disc">AWS / Azure / GCP</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8018-a0b0-cb57a84a3137" class="bulleted-list"><li style="list-style-type:disc">Select nearest region (better performance)</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8053-b6fb-d94f49d2611f"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-80ec-9da1-d5f0a0ccafd2" class="">4️⃣ Verify &amp; Activate</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8042-897c-eadff483e4a1" class="bulleted-list"><li style="list-style-type:disc">Verify email</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80cb-addf-e188c04818d4" class="bulleted-list"><li style="list-style-type:disc">Set password</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8058-ac73-d5fa554b7934" class="bulleted-list"><li style="list-style-type:disc">Login to account</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80a2-b1cb-d96f1bcce138"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-8038-87dd-fa423ebfd088" class="">🖥️ Snowflake Web UI Overview</h2></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80ef-96ef-f4fa460a5980" class="">Snowflake provides a <strong>web-based interface</strong> for all operations.</p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80d4-8b9d-f125402ed32b" class="">👉 No need for external tools initially</p></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8090-bca6-c629b7c9fea8"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-803e-9f8f-f317d9acd802" class="">📌 Main Sections in Snowflake UI</h2></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-8032-bd31-f0612c0b3663" class="">🏠 1. Home / Worksheets</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-802d-89c5-f65d620ce812" class="bulleted-list"><li style="list-style-type:disc">Write and execute SQL queries</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80ec-a29c-e4babf61eceb" class="bulleted-list"><li style="list-style-type:disc">Create multiple worksheets</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80e7-bd69-dcb56ec3f4a1" class="bulleted-list"><li style="list-style-type:disc">Save queries</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-806c-ae62-c5f1a6018fb3"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-8074-bc44-d3ca508b45c1" class="">📊 2. Databases</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-807d-bce6-c1bb9bb432b7" class="bulleted-list"><li style="list-style-type:disc">View:<div style="display:contents" dir="auto"><ul id="3260b328-364d-80ba-a731-c8e7ee34bfe5" class="bulleted-list"><li style="list-style-type:circle">Databases</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8049-9d70-f159f8cefbe0" class="bulleted-list"><li style="list-style-type:circle">Schemas</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80f4-af18-c384d0db537d" class="bulleted-list"><li style="list-style-type:circle">Tables</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-807f-ab11-cd9db0819287" class="bulleted-list"><li style="list-style-type:disc">Manage data structures</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-809e-9114-e82f905e1158"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-80a4-a6b5-f438574c30c6" class="">⚙️ 3. Warehouses</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8013-b762-e1aefd4b583d" class="bulleted-list"><li style="list-style-type:disc">Manage compute resources</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8026-996a-da76fb51595a" class="bulleted-list"><li style="list-style-type:disc">Start / Stop warehouses</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80c3-b813-e9561915168a" class="bulleted-list"><li style="list-style-type:disc">Monitor usage</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8040-abf2-e7af94b95828"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-80d3-ad6e-e46e9c44fa59" class="">🔐 4. Roles &amp; Users</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80b2-8b97-eb6a806b4fdc" class="bulleted-list"><li style="list-style-type:disc">Manage access control</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8041-acfc-c4aeba9aeb34" class="bulleted-list"><li style="list-style-type:disc">Assign roles</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8026-b28a-ff0f6897312e"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-80cc-9fb7-dc732e942727" class="">📂 5. Data</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80dc-a1f8-f143fa43e58f" class="bulleted-list"><li style="list-style-type:disc">Load and explore data</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8010-9809-c5ba97da962d" class="bulleted-list"><li style="list-style-type:disc">View table contents</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80bb-b246-cb1dbe9e357a"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-8086-9d32-db0780d89053" class="">📈 6. History / Activity</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-803d-b6c0-fa3163714b50" class="bulleted-list"><li style="list-style-type:disc">Query history</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80ea-8bfc-da5676da1b95" class="bulleted-list"><li style="list-style-type:disc">Execution details</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-801c-874a-fe0ec5bfa3a0" class="bulleted-list"><li style="list-style-type:disc">Performance tracking</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8019-8292-e1e78b2c03d1"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-8049-b592-c74ed3225ed0" class="">⚙️ Important UI Concepts</h2></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-807a-8ee3-ce45fea99285" class="">🧪 Worksheets</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-802e-8be0-d28a0e91a5b0" class="bulleted-list"><li style="list-style-type:disc">SQL editor</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-801b-801b-dacfe6aad1db" class="bulleted-list"><li style="list-style-type:disc">Run queries</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8031-ab08-d4c7b5a5f57a" class="bulleted-list"><li style="list-style-type:disc">Debug errors</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8067-848b-dbe706f9cec1"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-8094-b77f-cdba16b07a33" class="">🏭 Virtual Warehouse</h3></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8026-982c-c2e6e32b05a5" class="bulleted-list"><li style="list-style-type:disc">Compute engine</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8044-ac27-fba5c54b1138" class="bulleted-list"><li style="list-style-type:disc">Required to run queries</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-804b-a35c-c8bdda36f980"/></div><div style="display:contents" dir="auto"><h3 id="3260b328-364d-8051-9538-fda8257beb13" class="">🗄️ Database Structure</h3></div><div style="display:contents" dir="auto"><p id="3260b328-364d-804f-b7be-c6c1dc398be3" class="">Hierarchy:</p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80ca-93eb-cc3b72ff5f4c" class="">Database → Schema → Table</p></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-8016-867a-cc2ff3be11f1"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-8011-b25e-dcfe23c285b4" class="">🎯 Best Practices (Very Important)</h2></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-809e-8438-d37488d8be1e" class="bulleted-list"><li style="list-style-type:disc">Always <strong>select warehouse before running queries</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8052-8919-e4c8880ab18a" class="bulleted-list"><li style="list-style-type:disc">Use <strong>small warehouse</strong> for practice (cost control)</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8014-b9e8-c5aced67f01e" class="bulleted-list"><li style="list-style-type:disc">Save important queries</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8086-b102-e28f1fcf742b" class="bulleted-list"><li style="list-style-type:disc">Monitor query history</li></ul></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80d1-994f-cf8a398c207a"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-806a-b55e-ed2c5dbbc7b5" class="">⚠️ Common Mistakes (Students Do This)</h2></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80fe-823a-fd99d64201a3" class="bulleted-list"><li style="list-style-type:disc">Forgetting to start warehouse</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80c9-a93d-d475a329865b" class="bulleted-list"><li style="list-style-type:disc">Running queries without selecting DB</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8069-84df-e7ff1f451c04" class="bulleted-list"><li style="list-style-type:disc">Ignoring query errors</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-8090-a8d3-e312101f9bd5" class="bulleted-list"><li style="list-style-type:disc">Not saving work</li></ul></div><div style="display:contents" dir="auto"><p id="3260b328-364d-807e-8ab3-d765e5784746" class="">👉 Avoid these → you learn faster</p></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-802d-88b5-ec1a449593fc"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-80c2-81bc-d132b0c52f5c" class="">🧠 Interview Angle</h2></div><div style="display:contents" dir="auto"><p id="3260b328-364d-8034-81e4-fab3f4b47ebb" class="">You may get questions like:</p></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-808c-ad8d-c3389328e154" class="bulleted-list"><li style="list-style-type:disc">How to create Snowflake account?</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-800c-a31c-de1a6d9a8f9a" class="bulleted-list"><li style="list-style-type:disc">What is Snowflake UI?</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-802c-9eee-cd7101f43dd0" class="bulleted-list"><li style="list-style-type:disc">What is worksheet?</li></ul></div><div style="display:contents" dir="auto"><ul id="3260b328-364d-80f8-a1ac-ffd784d5b8eb" class="bulleted-list"><li style="list-style-type:disc">What is virtual warehouse?</li></ul></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80ad-8c47-c35a4230657e" class="">👉 These are <strong>basic but scoring questions</strong></p></div><div style="display:contents" dir="auto"><hr id="3260b328-364d-80dc-b225-ed2bfeae9f6e"/></div><div style="display:contents" dir="auto"><h2 id="3260b328-364d-80d2-89b0-e370244392b3" class="">🚀 Start Your Practice</h2></div><div style="display:contents" dir="auto"><p id="3260b328-364d-8096-9967-e5ca2ef45397" class="">👉 Register for Full Training:</p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-8053-a4dc-d2f953f43f76" class=""><a href="https://forms.gle/Ytb8Kqwyjc14HBZq6">https://forms.gle/Ytb8Kqwyjc14HBZq6</a></p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-800c-bd15-e442f5aa00ac" class="">👉 Follow for Updates:</p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-80c6-a538-fb8ad37a0caf" class=""><a href="https://www.instagram.com/sharuk_academy/">https://www.instagram.com/sharuk_academy/</a></p></div><div style="display:contents" dir="auto"><p id="502fb35d-380d-4e90-977c-af107ce6eddd" class="">▶️ Subscribe on YouTube:</p></div><div style="display:contents" dir="auto"><p id="e0d06f82-a4e4-4780-a1f6-bd9427dd6706" class=""><a href="https://www.youtube.com/@SharukhAcademy">https://www.youtube.com/@SharukhAcademy</a></p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-804c-9810-df16dde360b7" class="">👉 Explore More:</p></div><div style="display:contents" dir="auto"><p id="3260b328-364d-802d-b7f7-f58caab65b19" class=""><a href="https://www.sharukhacademy.com/">https://www.sharukhacademy.com/</a></p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
